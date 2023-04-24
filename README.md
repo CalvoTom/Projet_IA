@@ -11,3 +11,4 @@
 - Ajout d'un premier modèle avec:
 
         une condition permettant de séléctionner soit de GPU soit le CPU (device) et Une class systeme_neuronal
+- Ajout d'une fonction de pert et d'un optimiseur.

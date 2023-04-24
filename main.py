@@ -1,6 +1,7 @@
 import torch
 from torch import nn
 
+#Modèle 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
 class systeme_neuronal(nn.Module):
@@ -23,3 +24,7 @@ class systeme_neuronal(nn.Module):
 
 model = systeme_neuronal().to(device)
 print(model)
+
+#fonction de pert et optimiseur
+perte = torch.nn.CrossEntropyLoss()
+optimiseur = torch.optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
