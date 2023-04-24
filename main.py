@@ -22,9 +22,18 @@ class systeme_neuronal(nn.Module):
         self.fc1 = nn.Linear(64 * 28 * 28, 10)
 
     def forward(self, x):
+        x = self.conv1(x)
+        x = self.relu1(x)
+        x = self.pool1(x)
+        x = self.conv2(x)
+        x = self.relu2(x)
+        x = self.pool2(x)
+        x = self.conv3(x)
+        x = self.relu3(x)
+        x = self.pool3(x)
         x = self.flatten(x)
-        logits = self.linear_relu_stack(x)
-        return logits
+        x = self.fc1(x)
+        return x
 
 model = systeme_neuronal().to(device)
 print(model)

@@ -19,3 +19,6 @@
         nn.MaxPool2d et nn.Conv2d
 - Importation des bases de donnée d'entrainement et de test (transformer en tenseur avec la fonction transform).
 - Modification de la fonction transform pour pouvoir l'utiliser avec le module torchvision.
+
+# V.0.4
+- Modification de la méthode "forward" de ma classe reseaux_neuronal pour l'adapter au deux nouvelle couche du réseaux neuronal.
