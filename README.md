@@ -8,4 +8,6 @@
 
         Animaux, Humain, Maison, Object, Vêtement, Voiture
 # V.2
-- 
+- Ajout d'un premier modèle avec:
+
+        une condition permettant de séléctionner soit de GPU soit le CPU (device) et Une class systeme_neuronal
