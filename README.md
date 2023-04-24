@@ -1,2 +1,3 @@
 # Projet_IA
-Projet de fin d'année sur les intelligences artificielle de reconnaissance d'images.
+# V.1
+ - Ajout d'un fonction qui permat de transformer des images (input) en tenseur (output)
