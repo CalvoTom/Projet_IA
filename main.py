@@ -1,5 +1,7 @@
 import torch
 from torch import nn
+from transform import transform_tenseur
+import torchvision
 
 #Modèle 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
@@ -30,3 +32,10 @@ print(model)
 #fonction de pert et optimiseur
 perte = torch.nn.CrossEntropyLoss()
 optimiseur = torch.optim.SGD(model.parameters(), lr=0.001, momentum=0.9)
+
+#bases de donnée d'entrainement et de test
+trainset = torchvision.datasets.ImageFolder(root='Data Train/Train', transform = transform_tenseur())
+trainloader = torch.utils.data.DataLoader(trainset, batch_size=4, shuffle=True, num_workers=2)
+
+testset = torchvision.datasets.ImageFolder(root='Data Test/Test', transform = transform_tenseur())
+testloader = torch.utils.data.DataLoader(testset, batch_size=4, shuffle=False, num_workers=2)

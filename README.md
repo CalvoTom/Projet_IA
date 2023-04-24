@@ -10,10 +10,12 @@
 # V.0.2
 - Création d'un premier modèle avec:
 
-        une condition permettant de séléctionner soit de GPU soit le CPU (device) et Une class systeme_neuronal
+        Une condition permettant de séléctionner soit de GPU soit le CPU (device) et une class systeme_neuronal.
 - Création d'une fonction de pert et d'un optimiseur.
 
 # V.0.3
 - Ajout de deux nouvelle couche au réseaux neuronal:
 
         nn.MaxPool2d et nn.Conv2d
+- Importation des bases de donnée d'entrainement et de test (transformer en tenseur avec la fonction transform).
+- Modification de la fonction transform pour pouvoir l'utiliser avec le module torchvision.
