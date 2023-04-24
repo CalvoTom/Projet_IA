@@ -22,3 +22,6 @@
 
 # V.0.4
 - Modification de la méthode "forward" de ma classe reseaux_neuronal pour l'adapter au deux nouvelle couche du réseaux neuronal.
+
+# V.0.5
+- Création d'une fonction pour entrainer mon premier modèle a l'aide de la base de donnée de train.

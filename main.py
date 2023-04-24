@@ -6,9 +6,9 @@ import torchvision
 #Modèle 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 
-class systeme_neuronal(nn.Module):
+class Systeme_neuronal(nn.Module):
     def __init__(self):
-        super(systeme_neuronal, self).__init__()
+        super(Systeme_neuronal, self).__init__()
         self.conv1 = nn.Conv2d(3, 16, kernel_size=3, stride=1, padding=1)
         self.relu1 = nn.ReLU()
         self.pool1 = nn.MaxPool2d(kernel_size=2, stride=2)
@@ -35,7 +35,7 @@ class systeme_neuronal(nn.Module):
         x = self.fc1(x)
         return x
 
-model = systeme_neuronal().to(device)
+model = Systeme_neuronal().to(device)
 print(model)
 
 #fonction de pert et optimiseur
@@ -48,3 +48,20 @@ trainloader = torch.utils.data.DataLoader(trainset, batch_size=4, shuffle=True, 
 
 testset = torchvision.datasets.ImageFolder(root='Data Test/Test', transform = transform_tenseur())
 testloader = torch.utils.data.DataLoader(testset, batch_size=4, shuffle=False, num_workers=2)
+
+#fonction pour entrainer le modèle
+for epoch in range(10):
+    running_loss = 0.0
+    for i, data in enumerate(trainloader, 0):
+        inputs, labels = data
+        inputs, labels = inputs.to(device), labels.to(device)
+        optimiseur.zero_grad()
+        outputs = model(inputs)
+        loss = perte(outputs, labels)
+        loss.backward()
+        optimiseur.step()
+        running_loss += loss.item()
+
+        if i % 100 == 99:    
+            print(f"[{epoch + 1}, {i + 1}] perte au cours des 100 dernière itération: {running_loss / 100:.3f}")
+            running_loss = 0.0
