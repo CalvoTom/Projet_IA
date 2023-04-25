@@ -25,3 +25,6 @@
 
 # V.0.5
 - Création d'une fonction pour entrainer mon premier modèle a l'aide de la base de donnée de train.
+
+# V.0.6
+- Refonte des bases de données d'images de test et d'entrainement pour que le format soit utilisable par la classe ImageFolder de Pycraft.
