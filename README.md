@@ -4,4 +4,5 @@
 - Modification de la fonction transform.
 
 # V.1.2
--Préparation des données avec la bibliothèque d'image CIFAR10
+- Préparation des données avec la bibliothèque d'image CIFAR10
+- Création du réseaux neuronal pouvant acceuilir les donnée
