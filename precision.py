@@ -2,7 +2,7 @@ import torch
 from torch.autograd import Variable
 
 # Fonction pour tester le modèle avec l'ensemble de test et afficher la précision pour les images de test
-def precisionTest(model, test_loader):
+def precision_test(model, test_loader):
     model.eval()
     precision = 0.0
     total = 0.0

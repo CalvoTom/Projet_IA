@@ -4,7 +4,8 @@ from torch.autograd import Variable
 from torch.optim import Adam
 from precision import precision_test
 from data import data
-from network import reseaux_neuronal
+from network import reseaux_neuronal*
+from enregistrement import sauvegarderModele
 
 train_loader = data()[1]
 test_loader = data()[2]
@@ -51,5 +52,5 @@ def train(num_epochs):
         
         #Enregistre le modele si la precision est meilleur
         if precision > best_accuracy:
-            enregistre()
+            sauvegarderModele(model)
             best_accuracy = precision

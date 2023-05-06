@@ -10,3 +10,4 @@
 # V.1.3
 - Création d'une fonction pour évaluer la précision du modèle
 - Création d'un fonction pour entrainer le modèle
+- Création d'un fonction pour enregistrer le modèle si l'entrainement rend une précision supèrieur a la précédente et intégration de cette fonction a la fonction d'entrainement
