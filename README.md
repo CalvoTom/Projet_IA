@@ -11,3 +11,6 @@
 - Création d'une fonction pour évaluer la précision du modèle
 - Création d'un fonction pour entrainer le modèle
 - Création d'un fonction pour enregistrer le modèle si l'entrainement rend une précision supèrieur a la précédente et intégration de cette fonction a la fonction d'entrainement
+
+# V.1.4
+- Création d'un main pour centraliser les fonction et générer un model entrainer

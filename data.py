@@ -21,4 +21,4 @@ def data():
     test_set = CIFAR10(root="./data", train=False, transform=transformations, download=True)
     test_loader = DataLoader(test_set, batch_size=batch_size, shuffle=False, num_workers=0)
 
-    return(number_of_labels,train_loader,test_loader,classes)
+    return(number_of_labels,train_loader,test_loader,classes,batch_size)
