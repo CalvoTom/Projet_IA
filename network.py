@@ -30,5 +30,5 @@ def reseaux_neuronal():
             return sortie
 
     # Instancier un modèle de réseau de neurones
-    modele = Reseau()
-    return modele
+    model = Reseau()
+    return model

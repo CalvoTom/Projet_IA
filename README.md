@@ -9,3 +9,4 @@
 
 # V.1.3
 - Création d'une fonction pour évaluer la précision du modèle
+- Création d'un fonction pour entrainer le modèle
