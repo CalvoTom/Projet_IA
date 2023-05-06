@@ -14,3 +14,4 @@
 
 # V.1.4
 - Création d'un main pour centraliser les fonction et générer un model entrainer
+- Entrainement et création du premier model
