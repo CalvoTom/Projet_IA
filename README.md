@@ -6,3 +6,6 @@
 # V.1.2
 - Préparation des données avec la bibliothèque d'image CIFAR10
 - Création du réseaux neuronal pouvant acceuilir les donnée
+
+# V.1.3
+- Création d'une fonction pour évaluer la précision du modèle
