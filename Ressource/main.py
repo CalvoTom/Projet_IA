@@ -5,7 +5,7 @@ import numpy as np
 from precision import precision_test
 from data import data
 from network import reseaux_neuronal
-from enregistrement import sauvegarderModele
+from enregistrement import sauvegarder_modele
 from train import train
 from network import reseaux_neuronal
 
@@ -56,7 +56,7 @@ def test():
     outputs = model(images)
     _, predicted = torch.max(outputs, 1)
     
-    ##Montre les classe trouver par le model
+    #Montre les classe trouver par le model
     print('Classes trouver: ', ' '.join('%5s' % classes[predicted[j]] 
                               for j in range(batch_size)))
     
@@ -67,6 +67,5 @@ if __name__ == "__main__":
     print('Entrainement terminer')
     
     #Test du nouveau model
-    path = "Model.pth"
-    model.load_state_dict(torch.load(path))
+    sauvegarder_modele(model)
     test()

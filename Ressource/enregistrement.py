@@ -2,7 +2,7 @@ import torch
 from torch.autograd import Variable
 
 #Fonction pour sauvegarder le modèle
-def sauvegarderModele(model):
+def sauvegarder_modele(model):
     """
     Sauvegarde un modèle.
 

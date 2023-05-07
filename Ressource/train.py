@@ -5,7 +5,7 @@ from torch.optim import Adam
 from precision import precision_test
 from data import data
 from network import reseaux_neuronal
-from enregistrement import sauvegarderModele
+from enregistrement import sauvegarder_modele
 
 train_loader = data()[1]
 test_loader = data()[2]
@@ -34,7 +34,6 @@ def train(num_epochs):
 
     for epoch in range(num_epochs):
         perte_epoch = 0.0
-        precision_epoch = 0.0
 
         for i, (images, labels) in enumerate(train_loader, 0):
             
@@ -60,5 +59,5 @@ def train(num_epochs):
         
         #Enregistre le modele si la precision est meilleur
         if precision > best_accuracy:
-            sauvegarderModele(model)
+            sauvegarder_modele(model)
             best_accuracy = precision
