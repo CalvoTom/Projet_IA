@@ -4,7 +4,7 @@ from torch.autograd import Variable
 from torch.optim import Adam
 from precision import precision_test
 from data import data
-from network import reseaux_neuronal*
+from network import reseaux_neuronal
 from enregistrement import sauvegarderModele
 
 train_loader = data()[1]

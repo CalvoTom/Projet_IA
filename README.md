@@ -16,3 +16,6 @@
 - Création d'un main pour centraliser les fonctions et générer un model entrainer
 - Entrainement et création du premier model
 - Ajout d'affichage pour suivre les différente étapes de la construiction du modèle
+
+# V.1.5
+- Création d'un fonction utilisation pour pouvoir utiliser l'intelligence artificielle sur une image choisis.
