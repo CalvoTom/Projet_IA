@@ -3,6 +3,21 @@ from torchvision.transforms import transforms
 from torch.utils.data import DataLoader
 
 def data():
+    """
+    Chargement et préparation des données CIFAR10.
+
+    Input:
+    - None
+    
+    Output:
+    - tuple: Un tuple contenant les données suivantes :
+        - number_of_labels : le nombre total d'étiquettes dans les données
+        - train_loader : le DataLoader des données d'entraînement
+        - test_loader : le DataLoader des données de test
+        - classes : la liste des classes
+        - batch_size : la taille du batch
+    """
+
     #Transformation image en tenseur (sans chemin d'accès)
     transformations = transforms.Compose([
         transforms.ToTensor(),

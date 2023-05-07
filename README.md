@@ -18,4 +18,5 @@
 - Ajout d'affichage pour suivre les différente étapes de la construiction du modèle
 
 # V.1.5
-- Création d'un fonction utilisation pour pouvoir utiliser l'intelligence artificielle sur une image choisis.
+- Création d'un fonction utilisation pour pouvoir utiliser l'intelligence artificielle sur une image choisis
+- Ajout de spécification détailler pour chaque fonction

@@ -3,6 +3,15 @@ import torch.nn.functional as F
 
 # Définir un réseau de neurones convolutionnel
 def reseaux_neuronal():
+    """
+    Création d'un réseau de neurones convolutionnel.
+
+    Input:
+    - None
+
+    Output:
+    - nn.Module : Un modèle de réseau de neurones.
+    """
     class Reseau(nn.Module):
         def __init__(self):
             super(Reseau, self).__init__()

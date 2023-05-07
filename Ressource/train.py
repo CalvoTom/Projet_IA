@@ -17,7 +17,15 @@ optimizer = Adam(model.parameters(), lr=0.001, weight_decay=0.0001)
 
 #Fonction d'entraînement
 def train(num_epochs):
-    
+    """
+    Fonction qui entraîne un modèle de réseau de neurones sur les données CIFAR10.
+
+    Input:
+    - num_epochs (int): Le nombre d'époques d'entraînement.
+
+    Output:
+    - None
+    """
     best_accuracy = 0.0
 
     #Définir le périphérique d'exécution

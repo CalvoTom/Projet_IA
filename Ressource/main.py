@@ -19,6 +19,15 @@ model = reseaux_neuronal()
 
 #Fonction pour montrer les images
 def imageshow(img):
+    """
+    Cette fonction affiche une image à partir de son tenseur
+    
+    Input:
+    - img (torch.Tensor) : le tenseur représentant l'image à afficher
+    
+    Output:
+    - None
+    """
     img = img / 2 + 0.5
     npimg = img.numpy()
     plt.imshow(np.transpose(npimg, (1, 2, 0)))
@@ -27,6 +36,16 @@ def imageshow(img):
 
 #Fonction pour tester le model avec des lots d'image
 def test():
+    """
+    Cette fonction permet de tester le modèle entraîné sur un batch d'images de test. Elle affiche les vraies classes
+    et les classes prédites par le modèle pour chaque image.
+    
+    Input:
+    - None
+    
+    Output:
+    - None
+    """
     images, labels = next(iter(test_loader))
     imageshow(torchvision.utils.make_grid(images))
    
