@@ -1,6 +1,7 @@
 from PIL import Image
 import torch
-from torchvision import transforms
+import torchvision
+import PIL.Image
 
 def transform_tenseur(chm_image):
     """
@@ -12,15 +13,17 @@ def transform_tenseur(chm_image):
     Output:
     - torch.Tensor: Le tenseur normalisé de l'image.
     """
-    # Ouvrir l'image et vérifier la taille
-    image = Image.open(chm_image)
-    if image.size != (224, 224):
-        image = image.resize((224, 224))
-    
-    # Convertir l'image en mode RVB et appliquer les transformations
-    image = image.convert('RGB')
-    transform = transforms.Compose([
-        transforms.ToTensor(),
+    img = PIL.Image.open(chm_image)
+
+    #redimension et transformation
+    transform = torchvision.transforms.Compose([
+        torchvision.transforms.Resize((32, 32)),
+        torchvision.transforms.ToTensor(),
+        torchvision.transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ])
-    tensor = transform(image)
-    return tensor
+    tensor_img = transform(img)
+
+    # Ajouter une dimension pour le batch
+    tensor_img = tensor_img.unsqueeze(0)
+    
+    return tensor_img

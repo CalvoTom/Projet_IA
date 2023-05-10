@@ -3,27 +3,27 @@ import torchvision
 import PIL.Image
 from simple_colors import *
 from Ressource import data
+from Ressource import transform
 from Ressource import network
 
 classe = data.data()[3]
 
 def use():
-    
+    """
+    Cette fonction sert d'interface d'utilisation afin de pouvoir prédire la classe d'une image choisis.
+
+    Input:
+    - None
+
+    Output:
+    - None
+    """
     #ouvrir l'image souhaitée
     print(red("Veuillez glisser votre image dans le dossier ressource", "bold"))
     chm_image = "Ressource/" + input(black("Indiquer le nom de votre image:"))
-    img = PIL.Image.open(chm_image)
-
-    # Transformation de l'image en tenseur
-    transform = torchvision.transforms.Compose([
-        torchvision.transforms.Resize((32, 32)),
-        torchvision.transforms.ToTensor(),
-        torchvision.transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
-    ])
-    tensor_img = transform(img)
-
-    # Ajouter une dimension pour le batch
-    tensor_img = tensor_img.unsqueeze(0)
+  
+    #Convertit l'image en tensor utilisable par le model
+    tensor_img = transform.transform_tenseur(chm_image)
                       
     # Charger le modèle sauvegardé
     modele = network.reseaux_neuronal()

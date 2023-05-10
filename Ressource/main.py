@@ -18,7 +18,7 @@ batch_size = data()[4]
 model = reseaux_neuronal()
 
 #Fonction pour montrer les images
-def imageshow(img):
+def image_show(img):
     """
     Cette fonction affiche une image à partir de son tenseur
     
@@ -47,7 +47,7 @@ def test():
     - None
     """
     images, labels = next(iter(test_loader))
-    imageshow(torchvision.utils.make_grid(images))
+    image_show(torchvision.utils.make_grid(images))
    
     #Montre les classes que le model devrait trouver
     print('Vrai classes: ', ' '.join('%5s' % classes[labels[j]] 
@@ -57,13 +57,13 @@ def test():
     _, predicted = torch.max(outputs, 1)
     
     #Montre les classe trouver par le model
-    print('Classes trouver: ', ' '.join('%5s' % classes[predicted[j]] 
+    print('Classes trouvée: ', ' '.join('%5s' % classes[predicted[j]] 
                               for j in range(batch_size)))
     
 if __name__ == "__main__":
     
     #Construction du model en fonction d'un nombre d'entrainement donner
-    train(3)
+    train(15)
     print('Entrainement terminer')
     
     #Test du nouveau model
