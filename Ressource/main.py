@@ -63,7 +63,7 @@ def test():
 if __name__ == "__main__":
     
     #Construction du model en fonction d'un nombre d'entrainement donner
-    train(5)
+    train(3)
     print('Entrainement terminer')
     
     #Test du nouveau model

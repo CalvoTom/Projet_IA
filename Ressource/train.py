@@ -39,7 +39,7 @@ def train(num_epochs):
             
             images = Variable(images.to(device))
             labels = Variable(labels.to(device))
-
+            
             optimizer.zero_grad()
             outputs = model(images)
             loss = fonction_perte(outputs, labels)
@@ -51,7 +51,7 @@ def train(num_epochs):
             #Affiche les statistiques pour chaque 1 000 images
             perte_epoch += loss.item()
             if i % 1000 == 999:    
-                print('[%d, %5d] loss: %.3f' %
+                print('[%d, %5d] perte: %.3f' %
                       (epoch + 1, i + 1, perte_epoch / 1000))
                 perte_epoch = 0.0
 

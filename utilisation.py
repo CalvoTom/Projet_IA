@@ -2,36 +2,39 @@ import torch
 import torchvision
 import PIL.Image
 from simple_colors import *
-from Ressource import transform
+from Ressource import data
+from Ressource import network
 
-def predict_image_class():
+classe = data.data()[3]
 
+def use():
+    
+    #ouvrir l'image souhaitée
     print(red("Veuillez glisser votre image dans le dossier ressource", "bold"))
     chm_image = "Ressource/" + input(black("Indiquer le nom de votre image:"))
-    image = PIL.Image.open(chm_image)
-                      
-    # Charger le modèle sauvegardé
-    model_state_dict = torch.load("Model.pth", map_location=torch.device('cpu'))
-    model = torchvision.models.resnet18()
-    model.fc = torch.nn.Linear(model.fc.in_features, 10)
-    model.load_state_dict(model_state_dict)
-    model.eval()
+    img = PIL.Image.open(chm_image)
 
-    
-    # Pré-traitement de l'image
-    preprocess = torchvision.transforms.Compose([
-        torchvision.transforms.Resize((224, 224)),
+    # Transformation de l'image en tenseur
+    transform = torchvision.transforms.Compose([
+        torchvision.transforms.Resize((32, 32)),
         torchvision.transforms.ToTensor(),
         torchvision.transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
     ])
-    image_tensor = preprocess(image)
-    image_batch = image_tensor.unsqueeze(0)
-    
+    tensor_img = transform(img)
+
+    # Ajouter une dimension pour le batch
+    tensor_img = tensor_img.unsqueeze(0)
+                      
+    # Charger le modèle sauvegardé
+    modele = network.reseaux_neuronal()
+    modele.load_state_dict(torch.load("./Model.pth"))
+
     # Faire des prédictions avec le modèle
-    with torch.no_grad():
-        outputs = model.forward(image_batch)
+    outputs = modele(tensor_img)
     _, predicted = torch.max(outputs, 1)
-    predicted_class = predicted.item()
     
     # Retourner la prédiction
-    print(predicted_class)
+    print('Votre image semble être : ', ' '.join('%5s' % classe[predicted[j]] 
+                              for j in range(1)))
+
+use()
